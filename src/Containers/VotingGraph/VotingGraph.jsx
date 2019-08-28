@@ -4,35 +4,35 @@ import VoteBlock from "../../Components/VoteBlock/VoteBlock";
 import styles from "./VotingGraph.module.scss";
 
 class VotingGraph extends Component {
-  state = {};
-  render() {
-    return (
-      <div className={styles.wrapper}>
-        <div className={styles.partyContainer}>
-          <span>
-            <strong>Party #1</strong>
-          </span>
+  state = { numberOfParties: 2, numberOfVotes: 10 };
 
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-        </div>
+  getVoteBlocks(votes) {
+    let returnResults = [];
+    for (let index = 0; index < votes; index++) {
+      returnResults.push(<VoteBlock />);
+    }
+    return returnResults;
+  }
+
+  renderResults() {
+    let returnResults = [];
+    const votes = [4, 6];
+
+    for (let index = 0; index < this.state.numberOfParties; index++) {
+      returnResults.push(
         <div className={styles.partyContainer}>
           <span>
-            <strong>Party #2</strong>
+            <strong>Party #{index + 1}</strong>
           </span>
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
-          <VoteBlock />
+          {this.getVoteBlocks(votes[index])}
         </div>
-      </div>
-    );
+      );
+    }
+    return <>{returnResults}</>;
+  }
+
+  render() {
+    return <div className={styles.wrapper}>{this.renderResults()}</div>;
   }
 }
 

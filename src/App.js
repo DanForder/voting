@@ -1,15 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from "react";
+import styles from "./App.module.scss";
 import VotingGraph from "./Containers/VotingGraph/VotingGraph";
 
-function App() {
-  return (
-    <div className="App">
-      <p>Voting is fun</p>
-      <VotingGraph />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className={styles.wrapper}>
+        <h1>Voting is fun</h1>
+        <span>?</span>
+        <VotingGraph />
+      </div>
+    );
+  }
 }
 
 export default App;
