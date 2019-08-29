@@ -4,11 +4,7 @@ import styles from "./VoteBlock.module.scss";
 class VoteBlock extends Component {
   state = {};
   render() {
-    return (
-      <div className={styles.wrapper}>
-        <p>A Vote</p>
-      </div>
-    );
+    return <div className={styles.wrapper}>{/* <p>A Vote</p> */}</div>;
   }
 }
 

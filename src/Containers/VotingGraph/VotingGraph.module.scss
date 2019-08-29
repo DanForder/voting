@@ -1,14 +1,37 @@
 .wrapper {
-  //   border: rgb(160, 95, 95) 2px solid;
+  border: rgb(160, 95, 95) 2px solid;
+  height: 80vh;
+  padding: 0 50px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
+  // justify-content: space-evenly;
+  align-items: center;
 
-  .partyContainer {
-    background-color: rgb(73, 77, 100);
+  .resultsContainer {
+    border: rgb(95, 160, 124) 2px solid;
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+    .partyContainer {
+      background-color: rgb(73, 77, 100);
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .filterContainer {
+    // border: rgb(159, 160, 95) 2px solid;
+    width: 25%;
+    height: 150px;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    & > * {
+      height: 100%;
+    }
   }
 }

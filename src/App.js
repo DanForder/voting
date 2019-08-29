@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <h1>Voting is fun</h1>
-        <span>?</span>
+        <h1>Voting is fun?</h1>
         <VotingGraph />
       </div>
     );
